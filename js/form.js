@@ -15,8 +15,13 @@ function drawPlan (event){
   }
   saveToLocalStorage(trainingDays);
 
+  if(localStorage.userSchedule){
+    localStorage.removeItem('userSchedule');
+  }
+
   // load the schedule page
   window.location.href = 'schedule.html';
+
 }
 
 function saveToLocalStorage (checkedValues){

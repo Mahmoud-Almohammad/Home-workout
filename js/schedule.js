@@ -3,9 +3,6 @@
 let training = localStorage.getItem('trainingDays');
 let trainingDaysList = JSON.parse(training);
 
-let exercisesContent = document.getElementById('content');
-let randomTemplate; 
-
 let trainingMinutes = localStorage.getItem('trainingminutes');
 let trainingMinutesObj = JSON.parse(trainingMinutes);
 
@@ -36,7 +33,7 @@ plankToDownwardDog.quantity = null;
 let sitUps = new Exercises ('Sit-ups', 'Sit-up exercises are a type of strength training exercise that target the muscles of the abdomen and hip flexors.', 'https://i.pinimg.com/originals/0f/52/d6/0f52d6c8f62e75bace5f4fe3f9480fb0.gif');
 sitUps.quantity = null;
 
-let rightLegLunge = new Exercises ('Right leg lunge', 'Sure! The right leg lunge is a lower body strength and mobility exercise that targets the muscles of the thighs and buttocks(you can optionaly hold a damble with your hands).', 'https://bod-blog-assets.prod.cd.beachbodyondemand.com/bod-blog/wp-content/uploads/2016/07/29125218/forward-lunge-dumbbell-man.jpg');
+let rightLegLunge = new Exercises ('Right leg lunge', 'The right leg lunge is a lower body strength and mobility exercise that targets the muscles of the thighs and buttocks(you can optionaly hold a damble with your hands).', 'https://bod-blog-assets.prod.cd.beachbodyondemand.com/bod-blog/wp-content/uploads/2016/07/29125218/forward-lunge-dumbbell-man.jpg');
 
 let leftLegLunge = new Exercises ('Left leg lunge', 'The left leg lunge is a lower body strength and mobility exercise that targets the muscles of the thighs and buttocks.', 'https://media.gq.com/photos/58cea505ca736630b4720a83/4:3/w_1776,h_1332,c_limit/2017-03_GQ-Lunges_3x2.jpg');
 
@@ -58,16 +55,26 @@ function check (){
     }
   }
 }
+
 check();
 
-Exercises.prototype.render = function(){
-  let h2Elements = [];
+let content = {
+  day: trainingDaysList,
+  exName: [],
+  exTime: [],
+  exDes: [],
+  exGif: [],
+};
+
+let exercisesContent = document.getElementById('content');
+let randomTemplate;
+
+let render =  function (){
   let spamIndex = [];
   for (let i = 0; i < trainingDaysList.length; i++){
     let days = document.createElement('h2');
     days.textContent = trainingDaysList[i];
     exercisesContent.appendChild(days);
-    h2Elements.push(days);
 
     if (trainingMinutesObj){
       for(let j = 0; j < trainingMinutesObj; j = j + 15){
@@ -75,35 +82,71 @@ Exercises.prototype.render = function(){
           randomTemplate = randomIndex();
         } while (spamIndex.includes(randomTemplate));
         spamIndex.push(randomTemplate);
+
         let exerciseName = document.createElement('h3');
         exerciseName.textContent = allExercises[randomTemplate].name;
         exercisesContent.appendChild(exerciseName);
-        let exerciseNameLocalStorage = JSON.stringify(exerciseName);
-        localStorage.setItem('name', exerciseNameLocalStorage);
+        content.exName.push(exerciseName.innerHTML);
 
         let exerciseTime = document.createElement('p');
         exerciseTime.textContent = allExercises[randomTemplate].time;
         exercisesContent.appendChild(exerciseTime);
-        let exerciseTimeLocalStorage = JSON.stringify(exerciseTime);
-        localStorage.setItem('name', exerciseTimeLocalStorage);
+        content.exTime.push(exerciseTime.innerHTML);
 
         let exerciseDes = document.createElement('p');
         exerciseDes.textContent = allExercises[randomTemplate].des;
         exercisesContent.appendChild(exerciseDes);
-        let exerciseDesLocalStorage = JSON.stringify(exerciseDes);
-        localStorage.setItem('name', exerciseDesLocalStorage);
+        content.exDes.push(exerciseDes.innerHTML);
 
         let exerciseGif = document.createElement('img');
         exerciseGif.setAttribute('src', allExercises[randomTemplate].gif);
         exercisesContent.appendChild(exerciseGif);
-        let exerciseGifLocalStorage = JSON.stringify(exerciseGif);
-        localStorage.setItem('name', exerciseGifLocalStorage);
+        content.exGif.push(exerciseGif.src);
       }
     }
     spamIndex = [];
   }
+  localStorage.setItem('userSchedule', JSON.stringify(content));
 };
-Exercises.prototype.render();
+
+function reRender(){
+  let getData =  localStorage.getItem('userSchedule');
+  let userScheduleObj = JSON.parse(getData);
+  for (let i = 0; i < userScheduleObj.day.length; i++){
+    let renderDays = document.createElement('h2');
+    renderDays.textContent = userScheduleObj.day[i];
+    exercisesContent.appendChild(renderDays);
+
+    let startIndex = i * userScheduleObj.exName.length / userScheduleObj.day.length;
+    let endIndex = (i + 1) * userScheduleObj.exName.length / userScheduleObj.day.length;
+
+    for(let j = startIndex; j < endIndex; j++){
+      let renderName = document.createElement('h3');
+      renderName.textContent = userScheduleObj.exName[j];
+      exercisesContent.appendChild(renderName);
+
+      let renderTime = document.createElement('p');
+      renderTime.textContent = userScheduleObj.exTime[j];
+      exercisesContent.appendChild(renderTime);
+
+      let renderDes = document.createElement('p');
+      renderDes.textContent = userScheduleObj.exDes[j];
+      exercisesContent.appendChild(renderDes);
+
+      let renderGif = document.createElement('img');
+      renderGif.src = userScheduleObj.exGif[j];
+      exercisesContent.appendChild(renderGif);
+    }
+  }
+}
+
+if(localStorage.getItem('userSchedule')){
+  reRender();
+} else{
+  render();
+}
+
+
 
 function randomIndex (){
   return Math.floor(Math.random() * allExercises.length);
