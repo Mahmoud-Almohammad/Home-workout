@@ -3,7 +3,7 @@
 let training = localStorage.getItem('trainingDays');
 let trainingDaysList = JSON.parse(training);
 
-let trainingMinutes = localStorage.getItem('trainingminutes');
+let trainingMinutes = localStorage.getItem('trainingMinutes');
 let trainingMinutesObj = JSON.parse(trainingMinutes);
 
 function Exercises (name, des, gif){
@@ -73,7 +73,7 @@ let render =  function (){
   let spamIndex = [];
   for (let i = 0; i < trainingDaysList.length; i++){
     let days = document.createElement('h2');
-    days.textContent = trainingDaysList[i];
+    days.textContent = (i+1) + '- ' + trainingDaysList[i];
     exercisesContent.appendChild(days);
 
     if (trainingMinutesObj){
@@ -114,7 +114,7 @@ function reRender(){
   let userScheduleObj = JSON.parse(getData);
   for (let i = 0; i < userScheduleObj.day.length; i++){
     let renderDays = document.createElement('h2');
-    renderDays.textContent = userScheduleObj.day[i];
+    renderDays.textContent = (i+1) + '- ' + userScheduleObj.day[i];
     exercisesContent.appendChild(renderDays);
 
     let startIndex = i * userScheduleObj.exName.length / userScheduleObj.day.length;
@@ -145,7 +145,7 @@ if(localStorage.getItem('userSchedule')){
 } else{
   render();
 }
-
+console.log(document);
 
 
 function randomIndex (){

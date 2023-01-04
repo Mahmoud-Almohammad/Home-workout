@@ -8,8 +8,8 @@ function loadNonSchedulePage(){
 }
 
 let form = document.getElementById('form');
-form.addEventListener('click', loadSchedulePage);
+form.addEventListener('click', loadFormPage);
 
-function loadSchedulePage (){
+function loadFormPage (){
   window.location.href = 'form.html';
 }

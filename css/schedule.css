@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+header{
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+  height: 100px;
+  background-color: #0F3D3E;
+  opacity: .8;
+}
+
+header img {
+  border-radius: 5px;
+  width: 220px;
+  height: 100px;
+  position: relative;
+  left: 40px;
+
+}
+
+header h1 {
+  text-align: center;
+  position: relative;
+  bottom: 105px;
+  font-size: 50px;
+  line-height: calc(100% / .5);
+  font-weight: 800;
+  color: rgba(255, 255, 255, .8);
+  font-family: 'Abril Fatface', cursive;
+}
+
+header nav {
+  float: right;
+  position: relative;
+  bottom: 160px;
+  right: 70px;
+  font-size: 20px;
+  font-family: 'Abril Fatface', cursive;
+}
+
+header nav a {
+  text-decoration: none;
+  padding: 25px;
+  color: #E2DCC8;
+}
+
+header nav a:hover{
+  text-decoration: underline;
+}
+
+main{
+  background-color: #3F4E4F;
+}
+
+main p {
+  color: rgba(255, 255, 255, .8);
+  width: 60%;
+font-size: 20px;
+padding: 10px;
+text-align: center;
+line-height: 1.8em;
+position: relative;
+left: 280px;
+font-family: 'Mukta', sans-serif;
+}
+
+main p:nth-child(2){
+  margin-bottom: 40px;
+}
+
+h3 + p {
+  font-size: 17px;
+}
+
+ h2 {
+  font-size: 30px;
+  font-weight: 900;
+  border: 3px solid #A27B5C;
+  border-radius: 20px;
+  background-color: #DCD7C9;
+  color: rgba(0, 0, 0, .7);
+  margin: 20px 0px;
+  padding: 12px;
+  text-align: center;
+  font-family: 'Mukta', sans-serif;
+}
+
+#content h3 {
+  font-size: 25px;
+  text-align: center;
+  font-weight: 600;
+  color: rgba(255, 255, 255, .8);
+  font-family: 'Roboto Slab', serif;
+}
+
+
+main img{
+  width:35%;
+  height: 300px;
+  position: relative;
+  top: 50%;
+  left: 35%;
+  margin: 40px 0px;
+}
+
+footer{
+  background-color: #0F3D3E;
+  height: 130px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #E6D2AA;
+}
+
+footer a:hover{
+  text-decoration: underline;
+}
+
+footer p {
+  font-size: 25px;
+  color: #FF9F29;
+  opacity: .8;
+  font-family: 'Abril Fatface', cursive;
+  font-weight: 100;
+}
+
+footer p:nth-child(1), footer p:nth-child(2) {
+ margin-left: 30px;
+}
+
+footer p:nth-child(1) {
+padding: 30px 0px;
+}
+
+footer p:nth-child(3) {
+  text-align: center;
+  position: relative;
+  bottom: 55px;
+  margin-left: 55px;
+}
+
+footer p:nth-child(4){
+text-align: end;
+position: relative;
+right: 30px;
+bottom: 80px;
+}

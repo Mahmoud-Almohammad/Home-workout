@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+header{
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    height: 100px;
+    background-color: #0F3D3E;
+    opacity: .8;
+  }
+
+header img {
+    border-radius: 5px;
+    width: 220px;
+    height: 100px;
+    position: relative;
+    left: 40px;
+
+}
+
+header h1 {
+    text-align: center;
+    position: relative;
+    bottom: 105px;
+    font-size: 50px;
+    line-height: calc(100% / .5);
+    font-weight: 800;
+    color: rgba(255, 255, 255, .8);
+    font-family: 'Abril Fatface', cursive;
+}
+
+header nav {
+    float: right;
+    position: relative;
+    bottom: 160px;
+    right: 70px;
+    font-size: 20px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+header nav a {
+    text-decoration: none;
+    padding: 25px;
+    color: #E2DCC8;
+    
+}
+
+header nav a:hover{
+    text-decoration: underline;
+}
+
+main {
+    background-image: url(https://wallpaperaccess.com/full/834264.jpg);
+    background-size: cover;
+    opacity: .85;
+    height: 600px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+justify-content: space-around;
+    
+}
+
+main div button {
+    height: 300px;
+    width: 280px;
+    border-radius: 25%;
+    cursor: pointer;
+   font-size: 40px;
+   color: rgba(0, 0, 0, .85);
+   background-color: #E2DCC8;
+     
+}
+
+main p {
+    color: rgba(255, 255, 255, .7);
+    width: 60%;
+font-size: 23px;
+padding: 20px;
+line-height: 1.8em;
+position: relative;
+left: 280px;
+    
+}
+
+footer{
+    background-color: #0F3D3E;
+    height: 130px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #E6D2AA;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 25px;
+    color: #FF9F29;
+    opacity: .8;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 100;
+}
+
+footer p:nth-child(1), footer p:nth-child(2) {
+   margin-left: 30px;
+}
+
+footer p:nth-child(1) {
+padding: 30px 0px;
+}
+
+footer p:nth-child(3) {
+    text-align: center;
+    position: relative;
+    bottom: 55px;
+    margin-left: 55px;
+}
+
+footer p:nth-child(4){
+text-align: end;
+position: relative;
+right: 30px;
+bottom: 80px;
+}
+
