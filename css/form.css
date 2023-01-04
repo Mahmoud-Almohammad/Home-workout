@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
 header{
   position: relative;
   width: 100%;
@@ -44,6 +45,136 @@ header nav a {
   color: #E2DCC8;
 }
 
+header nav a:hover{
+  text-decoration: underline;
+}
+
+main{
+  height: 515px;
+  background-image: url(https://wallpaperaccess.com/full/834264.jpg);
+    background-size: cover;
+    opacity: .85;
+    width: 100%;
+}
+
+#form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#days{
+  display: grid;
+  grid-column: 1 / 2;
+}
+
+#days label:first-of-type {
+  position: relative;
+  left: 130px;
+  font-size: 20px;
+  top: 10px;
+  color: rgba(255, 255, 255, .8);
+  font-family: 'Mukta', sans-serif;
+}
+
+#days label:not(:first-of-type) {
+  position: relative;
+  left: 300px;
+  top: 5px;
+  font-size: 25px;
+  color: rgba(255, 255, 255, .8);
+  font-family: 'Mukta', sans-serif;
+}
+
+input[type="checkbox"].switch_1{
+  font-size: 30px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 2em;
+  height: 1em;
+  background: #ddd;
+  border-radius: 3em;
+  position: relative;
+  left: 160px;
+  top: 37px;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  }
+
+  input[type="checkbox"].switch_1:first-of-type{
+    position: relative;
+    top: 39px;
+  }
+  
+  input[type="checkbox"].switch_1:checked{
+  background: #0ebeff;
+  }
+  
+  input[type="checkbox"].switch_1:after{
+  position: absolute;
+  content: "";
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+          box-shadow: 0 0 .25em rgba(0,0,0,.3);
+  -webkit-transform: scale(.7);
+          transform: scale(.7);
+  left: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  }
+  
+  input[type="checkbox"].switch_1:checked:after{
+  left: calc(100% - 1em);
+  }
+
+  .minutes{
+    position: relative;
+    left: 100px;
+    top: 13px;
+  }
+
+.minutes label{
+  font-size: 20px;
+  color: rgba(255, 255, 255, .8);
+  font-family: 'Mukta', sans-serif;
+}
+
+.minutes p{
+ margin: 10px 0px;
+  line-height: 1.7em;
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, .8);
+  font-family: 'Mukta', sans-serif;
+}
+
+.minutes input[type="number"] {
+  color: rgba(255, 255, 255, .8);
+  background-color: #282A3A;
+  transform: scale(1.3, 1.1) translate(15px, -2px);
+  border-radius: 5px;
+
+}
+
+button{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2, 1.5);
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #E5E5CB;
+  padding: 8px;
+  font-family: 'Mukta', sans-serif;
+}
+
+
+
+
 footer{
   background-color: #0F3D3E;
   height: 130px;
@@ -52,6 +183,10 @@ footer{
 footer a {
   text-decoration: none;
   color: #E6D2AA;
+}
+
+footer a:hover{
+  text-decoration: underline;
 }
 
 footer p {

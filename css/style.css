@@ -42,6 +42,11 @@ header nav a {
     text-decoration: none;
     padding: 25px;
     color: #E2DCC8;
+    
+}
+
+header nav a:hover{
+    text-decoration: underline;
 }
 
 main {
@@ -52,7 +57,7 @@ main {
     width: 100%;
     padding: 0;
     margin: 0;
-    text-align: center;ss
+    text-align: center;
 }
 
 div {
@@ -92,6 +97,10 @@ footer{
 footer a {
     text-decoration: none;
     color: #E6D2AA;
+}
+
+footer a:hover{
+    text-decoration: underline;
 }
 
 footer p {

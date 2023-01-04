@@ -13,7 +13,8 @@ function drawPlan (event){
       trainingDays.push(event.target[i].name);
     }
   }
-  saveToLocalStorage(trainingDays);
+  let minutesTraining = event.target.minutes.value;
+  saveToLocalStorage(trainingDays, minutesTraining);
 
   if(localStorage.userSchedule){
     localStorage.removeItem('userSchedule');
@@ -24,13 +25,13 @@ function drawPlan (event){
 
 }
 
-function saveToLocalStorage (checkedValues){
+function saveToLocalStorage (checkedValues, minutesTraining){
 
   let userTrainingDays = JSON.stringify(checkedValues);
   localStorage.setItem('trainingDays', userTrainingDays);
 
-  let minutes = JSON.stringify(document.getElementById('minutes').value);
-  localStorage.setItem('trainingminutes', minutes);
+  let minutes = JSON.stringify(minutesTraining);
+  localStorage.setItem('trainingMinutes', minutes);
 
 
 }

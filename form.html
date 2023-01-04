@@ -19,27 +19,35 @@
       </header>
       <main>
 <form action="" id="planForm">
-
-    Choose the days that you want to train in:
+    <div id="form">
+<div id="days">
+   <label>Choose the days that you want to train in:</label>
+   <div class="switch_box box_1">
+    <input type="checkbox" name="Monday" class="switch_1">
+</div>
     <label for="monday">Monday</label>
-    <input type="checkbox" name="monday">
+    <input type="checkbox" name="Tuesday" class="switch_1">
     <label for="tuesday">Tuesday</label>
-    <input type="checkbox" name="tuesday">
+    <input type="checkbox" name="Wednesday" class="switch_1">
     <label for="wednesday">Wednesday</label>
-    <input type="checkbox" name="wednesday">
+    <input type="checkbox" name="Thursday" class="switch_1">
     <label for="thursday">Thursday</label>
-    <input type="checkbox" name="thursday">
+    <input type="checkbox" name="Friday" class="switch_1">
     <label for="friday">Friday</label>
-    <input type="checkbox" name="friday">
+    <input type="checkbox" name="Saterday" class="switch_1">
     <label for="saterday">Saterday</label>
-    <input type="checkbox" name="saterday">
+    <input type="checkbox" name="Sunday" class="switch_1">
     <label for="sunday">Sunday</label>
-    <input type="checkbox" name="sunday">
-
-    <label for="minutes">How many minutes in a day you want to train:</label>
-    <input type="number" name="minutes" id="minutes" min="0">
-
+</div>
+<div class="minutes">
+    <label for="minutes" id="minutes">How many minutes in a day you want to train:</label>
+    <input type="number" name="minutes" id="minutes" min="0" max="180" value="0" required>
+    <p>Note: every exercise that will be drawn will take 15 minutes, so you have to insert a number that is a multiply of 15 like 15, 30, 45...etc</p>
+    
     <button id="submit">Draw a plan</button>
+</div>
+</div>
+    
 </form>
       </main>
       <footer>
