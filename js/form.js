@@ -5,8 +5,9 @@ planForm.addEventListener('submit', drawPlan);
 
 function drawPlan (event){
   event.preventDefault();
-  console.log(event);
+
   // save the data in the localstorage
+
   let trainingDays = [];
   for(let i = 0; i < 7; i++){
     if(event.target[i].checked === true){

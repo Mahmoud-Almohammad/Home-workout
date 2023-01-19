@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/1c2331100419969.Y3JvcCwzOTAwLDMwNTAsMCw0MjQ.png" alt="">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/1c2331100419969.Y3JvcCwzOTAwLDMwNTAsMCw0MjQ.png" alt="the website logo">
         <h1>Home Workout</h1>
         <nav>
             <a href="index.html">Home page</a>
@@ -22,9 +22,7 @@
     <div id="form">
 <div id="days">
    <label>Choose the days that you want to train in:</label>
-   <div class="switch_box box_1">
     <input type="checkbox" name="Monday" class="switch_1">
-</div>
     <label for="monday">Monday</label>
     <input type="checkbox" name="Tuesday" class="switch_1">
     <label for="tuesday">Tuesday</label>
@@ -41,8 +39,11 @@
 </div>
 <div class="minutes">
     <label for="minutes" id="minutes">How many minutes in a day you want to train:</label>
+ style
     <input type="number" name="minutes" id="minutes" min="0" max="180" value="0" required>
     
+    <input type="number" name="minutes" id="minutes" min="0" max="180" value="0" step="15" required>
+    main
     <button id="submit">Draw a plan</button>
 </div>
 </div>
