@@ -39,9 +39,11 @@
 </div>
 <div class="minutes">
     <label for="minutes" id="minutes">How many minutes in a day you want to train:</label>
+ style
+    <input type="number" name="minutes" id="minutes" min="0" max="180" value="0" required>
+    
     <input type="number" name="minutes" id="minutes" min="0" max="180" value="0" step="15" required>
-    <p>Note: every exercise that will be drawn will take 15 minutes, so you have to insert a number that is a multiply of 15 like 15, 30, 45...etc</p>
-    <p>Note: if you already have a plan you can go to it using the link above, but if you have any plan you can go on and draw a new plan. </p>
+    main
     <button id="submit">Draw a plan</button>
 </div>
 </div>
